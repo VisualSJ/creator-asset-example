@@ -208,6 +208,13 @@ declare global {
              */
             export function init(): any;
         }
+        export module Module {
+            /**
+              * 导入一个项目模块。
+              * @param url 项目模块的 Database URL。
+              */
+            export function importProjectModule(url: string): Promise<unknown>;
+        }
         export module Logger {
             /**
              * 清空所有的日志

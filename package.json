@@ -21,6 +21,16 @@
                 "list": [
                     "registerTestImporter"
                 ]
+            },
+            "mount": {
+                "path": "./static/assets"
+            }
+        },
+        "inspector": {
+            "section": {
+                "asset": {
+                    "test": "./dist/inspector/test.js"
+                }
             }
         }
     }

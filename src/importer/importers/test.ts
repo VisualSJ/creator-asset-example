@@ -41,19 +41,18 @@ export default class UnknownImporter extends Importer {
      */
     public async import(asset: Asset) {
 
-        // 虚拟的未知类型资源不做处理
-        if (!(asset instanceof Asset)) {
-            return true;
-        }
+        // 获取自定义类型
+        // Get the custom type
+        const { TestAsset } = await Editor.Module.importProjectModule('db://test-importer/TestAAA.ts') as any;
 
-        // 如果当前资源没有导入，则开始导入当前资源
+        // If the current resource is not imported, the system starts to import the current resource
         await asset.copyToLibrary(asset.extname, asset.source);
 
-        const unknowAsset = new ccAsset();
-        unknowAsset.name = asset.basename;
-        unknowAsset._setRawAsset(asset.extname);
+        const nAsset = new TestAsset();
+        nAsset.name = asset.basename;
+        nAsset._setRawAsset(asset.extname);
 
-        await asset.saveToLibrary('.json', EditorExtends.serialize(unknowAsset));
+        await asset.saveToLibrary('.json', EditorExtends.serialize(nAsset));
 
         return true;
     }
