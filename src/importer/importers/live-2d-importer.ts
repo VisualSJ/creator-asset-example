@@ -6,7 +6,7 @@ module.paths.push(join(Editor.App.path, 'node_modules'));
 import { Asset, Importer, VirtualAsset } from '@editor/asset-db';
 import { Asset as ccAsset } from 'cc';
 
-export default class UnknownImporter extends Importer {
+export default class Live2DImporter extends Importer {
 
     // 版本号如果变更，则会强制重新导入
     get version() {
@@ -43,12 +43,12 @@ export default class UnknownImporter extends Importer {
 
         // 获取自定义类型
         // Get the custom type
-        const { TestAsset } = await Editor.Module.importProjectModule('db://test-importer/TestAAA.ts') as any;
+        const { Live2DAsset } = await Editor.Module.importProjectModule('db://test-importer/Live2DAsset.ts') as typeof import('../../../static/assets/Live2D');
 
         // If the current resource is not imported, the system starts to import the current resource
         await asset.copyToLibrary(asset.extname, asset.source);
 
-        const nAsset = new TestAsset();
+        const nAsset = new Live2DAsset();
         nAsset.name = asset.basename;
         nAsset._setRawAsset(asset.extname);
 

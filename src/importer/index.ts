@@ -1,16 +1,16 @@
 'use strict';
 
-import TestImporter from './importers/test';
+import Live2DImporter from './importers/live-2d-importer';
 
 export function load() {}
 
 export function unload() {}
 
 export const methods = {
-    registerTestImporter() {
+    registerLive2DImporter() {
         return {
-            extname: ['.test'],
-            importer: TestImporter,
+            extname: ['.live2d'],
+            importer: Live2DImporter,
         };
     },
 }
