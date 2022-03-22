@@ -1,12 +1,12 @@
 // cSpell:ignore emscripten
 
-import { Asset, assetManager, BufferAsset, log, _decorator } from 'cc';
+import { Asset, log, _decorator } from 'cc';
 import live2DCubismCoreModuleFactory from '../20220318_CubismCoreWasm_Cocos/Live2DCubismCore.js' assert { type: 'emscripten' };
 
 async function initialize() {
-    // Feed the wasm binary to emscripten module factory.
     const index = await live2DCubismCoreModuleFactory({
         // Custom Emscripten module options here.
+        // See https://emscripten.org/docs/api_reference/module.html for what you can customize.
     });
 
     return index;
