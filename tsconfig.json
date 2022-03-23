@@ -10,8 +10,15 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
+        "composite": true,
     },
+    "include": [
+        "./src"
+    ],
     "exclude": [
-        "./static"
+        "./static",
+    ],
+    "references": [
+        { "path": "./static" }
     ]
 }

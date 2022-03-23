@@ -3,3 +3,6 @@
 
 # Generated code
 /dist
+static/lib/
+
+*.tsbuildinfo

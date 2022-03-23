@@ -5,6 +5,7 @@
     "description": "i18n:test-importer.description",
     "main": "./dist/main.js",
     "devDependencies": {
+        "@types/emscripten": "^1.39.6",
         "@types/node": "^16.0.1",
         "typescript": "^4.3.4"
     },
@@ -19,7 +20,7 @@
             "importer": {
                 "script": "./dist/importer/index.js",
                 "list": [
-                    "registerTestImporter"
+                    "registerLive2DImporter"
                 ]
             },
             "mount": {
